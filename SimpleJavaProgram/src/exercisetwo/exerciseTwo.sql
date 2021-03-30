@@ -1,0 +1,1 @@
+SELECT * FROM T1 t1 LEFT JOIN T2 t2 ON t1.id = t2.id ORDER BY t1.name
