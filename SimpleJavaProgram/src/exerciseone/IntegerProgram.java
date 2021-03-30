@@ -1,5 +1,6 @@
 package exerciseone;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,11 +19,8 @@ public class IntegerProgram {
 
     private static int getTheSmallestNonOccurringInteger(int[] integerArray) {
         Set<Integer> integerSet = new HashSet<>();
-        for(int integer : integerArray){
-            if(integer > 0){
-                integerSet.add(integer);
-            }
-        }
+
+        Arrays.stream(integerArray).filter(i->i > 0).forEach(i -> integerSet.add(i));
 
         for(int integer = 0; integer <= integerArray.length; integer++){
             if(!integerSet.contains(integer)){
